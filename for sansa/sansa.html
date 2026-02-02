@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Open When 💌</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(120deg, #ffd6e8, #cce7ff);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      width: 90%;
+      max-width: 600px;
+      text-align: center;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    }
+
+    h1 {
+      color: #ff4d88;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #555;
+    }
+
+    .buttons {
+      margin-top: 30px;
+      display: grid;
+      gap: 15px;
+    }
+
+    button {
+      padding: 15px;
+      border: none;
+      border-radius: 12px;
+      font-size: 1em;
+      cursor: pointer;
+      background: #ffb3d9;
+      transition: 0.2s;
+    }
+
+    button:hover {
+      background: #ff8fc4;
+      transform: scale(1.03);
+    }
+
+    .letter {
+      display: none;
+      margin-top: 25px;
+      background: #f7f7f7;
+      padding: 20px;
+      border-radius: 15px;
+      animation: fadeIn 0.5s ease;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(10px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    .back {
+      margin-top: 15px;
+      background: #ddd;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Open When 💌</h1>
+    <p>Click one when you need it.</p>
+
+    <div class="buttons" id="menu">
+      <button onclick="openLetter('miss')">Open when you miss me 🥺</button>
+      <button onclick="openLetter('sad')">Open when you're sad 😞</button>
+      <button onclick="openLetter('happy')">Open when you're happy 😊</button>
+      <button onclick="openLetter('tired')">Open when you're tired 😴</button>
+      <button onclick="openLetter('overthink')">Open when you're overthinking 🧠</button>
+      <!-- <button onclick="openLetter('overthink')">Open when you're overthinking 🧠</button> -->
+    </div>
+
+    <div class="letter" id="miss">
+      <h2>When You Miss Me</h2>
+      <p>
+        I miss you too..  
+        Tmi clg gako bela i have started waiting for your messsage Hehe 😊😊
+        Even when we're not talking, you're still in my head hai feri guff chai haneko haina ni
+      </p>
+      <button class="back" onclick="goBack()">⬅ Back</button>
+    </div>
+
+    <div class="letter" id="sad">
+      <h2>When You're Sad</h2>
+      <p>
+        I wish I could be there right now.  
+        Just remember: you're strong, and kind more than you think.  
+        Bad moments don't last, but you do 😊😊
+        sad hunu aba kaile kai sad ta bhayinxa 
+        Sad bhako bela ma sanga bolnu aunu madam ma khusi banaune prayas garxu tara 
+        maile nai kaile kai jhukera sadd banaye bhani pani mai snaga bolna aaunu jasari bhaye ni khusi banamla
+      </p>
+      <button class="back" onclick="goBack()">⬅ Back</button>
+    </div>
+
+    <div class="letter" id="happy">
+      <h2>When You're Happy</h2>
+      <p>
+         
+        Your smile literally changes the vibe of everything around .  
+        Keep being you. That’s my favorite version.
+        Tmi jaba malai compliments haru dinxau its the best part of you :
+      </p>
+      <button class="back" onclick="goBack()">⬅ Back</button>
+    </div>
+
+    <div class="letter" id="tired">
+      <h2>When You're Tired</h2>
+      <p>
+        You work so hard.  
+        Don’t forget to rest, drink water, and be gentle with yourself.  
+        You don’t have to carry everything alone.
+        dherai padna hudaina bela bela rest liney takka 
+        ani tara 12 ma chai op gpa lyaune ani party khuwaune.. 4 GPA COMING SOON
+      </p>
+      <button class="back" onclick="goBack()">⬅ Back</button>
+    </div>
+
+    <div class="letter" id="overthink">
+      <h2>When You're Overthinking</h2>
+      <p>
+        Breathe.  
+        Not everything needs an answer right now.  
+        You’re doing better than your brain is telling you.
+        GO WITH THE FLOW 
+      </p>
+      <button class="back" onclick="goBack()">⬅ Back</button>
+    </div>
+  </div>
+
+  <script>
+    function openLetter(id) {
+      document.getElementById("menu").style.display = "none";
+      document.querySelectorAll(".letter").forEach(l => l.style.display = "none");
+      document.getElementById(id).style.display = "block";
+    }
+
+    function goBack() {
+      document.querySelectorAll(".letter").forEach(l => l.style.display = "none");
+      document.getElementById("menu").style.display = "grid";
+    }
+  </script>
+</body>
+</html>
